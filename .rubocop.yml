@@ -34,7 +34,7 @@ Rails/OutputSafety:
 GraphQL/ResolverMethodLength:
   Max: 15
 
-GraphQL/ObjectTypeNames:
+GraphQL/ObjectDescription:
   Enabled: true
 
 # Configuraciones específicas para I18n
