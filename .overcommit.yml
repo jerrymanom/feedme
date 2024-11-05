@@ -1,7 +1,21 @@
 PreCommit:
+  BundleCheckCustom:
+    enabled: true
+    description: 'Check gem dependencies'
+    quiet: true
+    command: ['bundle', 'check']
+  ForbiddenBranches:
+    enabled: true
+    description: 'Prevent commits to specified branches'
+    quiet: true
+    branch_patterns:
+      - main
+  LocalPathsInGemfile:
+    enabled: true
+    quiet: true
   RuboCop:
     enabled: true
-    description: "Ejecutando RuboCop para comprobar estilo de código"
+    description: 'Execute RuboCop to check code style'
     required_executable: 'rubocop'
     command: ['bundle', 'exec', 'rubocop']
     problem_on_unmodified_line: report
@@ -16,3 +30,17 @@ PreCommit:
       - 'lib/**/*.rake'
       - 'config/**/*.rb'
       - 'bin/bundle'
+  TrailingWhitespace:
+    enabled: true
+    description: 'Detect and remove trailing whitespace from lines'
+    quiet: true
+
+PrePush:
+  RSpec:
+    enabled: true
+    description: 'Run RSpec tests before push'
+    command: ['bundle', 'exec', 'rspec']
+  RuboCop:
+    enabled: true
+    description: 'Ensure Rubocop passes before push'
+    command: ['bundle', 'exec', 'rubocop']
