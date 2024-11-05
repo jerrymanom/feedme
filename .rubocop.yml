@@ -1,0 +1,16 @@
+require:
+  - rubocop-rspec
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-graphql
+  - rubocop-i18n
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'app/assets/**/*'
+    - 'app/views/**/*'
+    - 'db/**/*.rb'
+    - 'lib/**/*.rake'
+    - 'config/**/*.rb'
+    - 'bin/bundle'
