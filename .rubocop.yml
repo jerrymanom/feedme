@@ -1,12 +1,13 @@
 require:
-  - rubocop-rspec
   - rubocop-rails
-  - rubocop-performance
   - rubocop-graphql
   - rubocop-i18n
+  - rubocop-performance
+  - rubocop-rspec
 
 AllCops:
   NewCops: enable
+  TargetRubyVersion: 3.3.4
   Exclude:
     - 'app/assets/**/*'
     - 'app/views/**/*'
@@ -14,3 +15,42 @@ AllCops:
     - 'lib/**/*.rake'
     - 'config/**/*.rb'
     - 'bin/bundle'
+
+# Configuraciones generales de RuboCop
+Layout/LineLength:
+  Max: 120
+
+Lint/UselessAssignment:
+  Enabled: true
+
+# Configuraciones específicas para Rails
+Rails/SkipsModelValidations:
+  Enabled: true
+
+Rails/OutputSafety:
+  Enabled: true
+
+# Configuraciones específicas para GraphQL
+GraphQL/ResolverMethodLength:
+  Max: 15
+
+GraphQL/ObjectTypeNames:
+  Enabled: true
+
+# Configuraciones específicas para I18n
+I18n/GetText/DecorateString:
+  Enabled: true
+
+# Configuraciones específicas para Performance
+Performance/Detect:
+  Enabled: true
+
+Performance/StringReplacement:
+  Enabled: true
+
+# Configuraciones específicas para RSpec
+RSpec/DescribeClass:
+  Enabled: true
+
+RSpec/MultipleExpectations:
+  Max: 3

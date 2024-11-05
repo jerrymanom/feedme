@@ -3,9 +3,10 @@ PreCommit:
     enabled: true
     description: "Ejecutando RuboCop para comprobar estilo de código"
     required_executable: 'rubocop'
-    command: ['bundle', 'exec', 'rubocop', '-a']
-    on_warn: fail
-    problem_on_unmodified_line: ignore
+    command: ['bundle', 'exec', 'rubocop']
+    problem_on_unmodified_line: report
+    on_warn: warn
+    on_fail: fail
     include:
       - '**/*.rb'
     exclude:
