@@ -1,7 +1,6 @@
 require:
   - rubocop-rails
   - rubocop-graphql
-  - rubocop-i18n
   - rubocop-performance
   - rubocop-rspec
 
@@ -35,10 +34,6 @@ GraphQL/ResolverMethodLength:
   Max: 15
 
 GraphQL/ObjectDescription:
-  Enabled: true
-
-# Configuraciones específicas para I18n
-I18n/GetText/DecorateString:
   Enabled: true
 
 # Configuraciones específicas para Performance
