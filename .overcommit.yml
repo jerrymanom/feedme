@@ -1,0 +1,17 @@
+PreCommit:
+  RuboCop:
+    enabled: true
+    description: "Ejecutando RuboCop para comprobar estilo de código"
+    required_executable: 'rubocop'
+    command: ['bundle', 'exec', 'rubocop', '-a']
+    on_warn: fail
+    problem_on_unmodified_line: ignore
+    include:
+      - '**/*.rb'
+    exclude:
+      - 'app/assets/**/*'
+      - 'app/views/**/*'
+      - 'db/**/*.rb'
+      - 'lib/**/*.rake'
+      - 'config/**/*.rb'
+      - 'bin/bundle'
