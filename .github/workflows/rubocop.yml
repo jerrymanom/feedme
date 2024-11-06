@@ -19,10 +19,11 @@ jobs:
         bundler-cache: true
     - name: Install dependencies
       run: bundle install --jobs 4 --retry 3
+    - name: RuboCop
+      run: bundle exec rubocop --format json --out rubocop.json
     - name: Run reviewdog
       uses: reviewdog/action-rubocop@v1
       with:
-        rubocop_version: '1.6.8'
         level: 'warning'
         reporter: 'github-check'
         fail_on_error: 'true'
