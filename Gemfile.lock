@@ -361,7 +361,7 @@ DEPENDENCIES
   rails (~> 7.1.3, >= 7.1.3.2)
   rspec-rails
   rubocop (~> 1.68)
-  rubocop-graphql
+  rubocop-graphql (~> 1.5, >= 1.5.4)
   rubocop-i18n
   rubocop-performance
   rubocop-rails
