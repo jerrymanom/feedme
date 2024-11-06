@@ -20,8 +20,10 @@ jobs:
     - name: Install dependencies
       run: bundle install --jobs 4 --retry 3
     - name: Run reviewdog
-      uses: reviewdog/action-rubocop@v1
+      uses: reviewdog/action-rubocop@v2.3.0
       with:
+        rubocop_version: 'gemfile'
+        rubocop_extensions: rubocop-rails:gemfile rubocop-graphql:gemfile rubocop-i18n:gemfile rubocop-performance:gemfile rubocop-rspec:gemfile
         level: 'warning'
         reporter: 'github-check'
         fail_on_error: 'true'
