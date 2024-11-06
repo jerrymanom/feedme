@@ -62,6 +62,7 @@ group :development do
   # gem "spring"
 
   gem 'error_highlight', '>= 0.4.0', platforms: [:ruby]
+  gem 'overcommit'
   gem 'rubocop', '~> 1.68', require: false
   gem 'rubocop-graphql', '~> 1.5', '>= 1.5.4', require: false
   gem 'rubocop-i18n', require: false
@@ -83,4 +84,3 @@ gem 'graphiql-rails', group: :development
 gem 'graphql', '~> 2.3'
 gem 'graphql-batch' # Opcional, pero útil para optimización de consultas
 gem 'kaminari' # Para paginación
-gem 'overcommit'

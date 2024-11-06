@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
+# Controlador para manejar las actividades de Productos.
 class ProductsController < ApplicationController
-  def index; end
+  def index
+    @product = Product.all
+  end
 
   def new
     @product = Product.new
@@ -11,7 +14,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      redirect_to products_path, notice: 'El producto ha sido creado'
+      redirect_to products_path, notice: I18n.t('product.created')
     else
       render :new, status: :unprocessable_entity
     end
