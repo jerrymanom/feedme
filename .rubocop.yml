@@ -1,6 +1,7 @@
 require:
   - rubocop-rails
   - rubocop-graphql
+  - rubocop-i18n
   - rubocop-performance
   - rubocop-rspec
 
@@ -49,3 +50,10 @@ RSpec/DescribeClass:
 
 RSpec/MultipleExpectations:
   Max: 3
+
+# Configuraciones específicas para I18n
+I18n/DefaultLocale:
+  Enabled: true
+
+I18n/PreferLazyLookup:
+  Enabled: true
