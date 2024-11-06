@@ -63,7 +63,7 @@ group :development do
 
   gem 'error_highlight', '>= 0.4.0', platforms: [:ruby]
   gem 'rubocop', '~> 1.68', require: false
-  gem 'rubocop-graphql', require: false
+  gem 'rubocop-graphql', '~> 1.5', '>= 1.5.4', require: false
   gem 'rubocop-i18n', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
@@ -74,6 +74,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
 end
 
 gem 'tailwindcss-rails', '~> 2.4'
@@ -82,3 +83,4 @@ gem 'graphiql-rails', group: :development
 gem 'graphql', '~> 2.3'
 gem 'graphql-batch' # Opcional, pero útil para optimización de consultas
 gem 'kaminari' # Para paginación
+gem 'overcommit'

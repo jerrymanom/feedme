@@ -1,0 +1,30 @@
+name: RuboCop
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.3.4
+        bundler-cache: true
+    - name: Install dependencies
+      run: bundle install --jobs 4 --retry 3
+    - name: Run reviewdog
+      uses: reviewdog/action-rubocop@v1
+      with:
+        level: 'warning'
+        reporter: 'github-check'
+        fail_on_error: 'true'
+        filter_mode: 'file'
+        rubocop_flags: '--config .rubocop.yml'
+        github_token: ${{ secrets.GITHUB_TOKEN }}
