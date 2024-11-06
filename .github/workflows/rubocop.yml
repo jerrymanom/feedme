@@ -18,9 +18,7 @@ jobs:
         ruby-version: 3.3.4
         bundler-cache: true
     - name: Install dependencies
-      run: |
-        gem install bundler
-        bundle install --jobs 4 --retry 3
+      run: bundle install --jobs 4 --retry 3
     - name: RuboCop
       run: bundle exec rubocop --format json --out rubocop.json
     - name: Run reviewdog

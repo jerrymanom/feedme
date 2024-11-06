@@ -83,3 +83,4 @@ gem 'graphiql-rails', group: :development
 gem 'graphql', '~> 2.3'
 gem 'graphql-batch' # Opcional, pero útil para optimización de consultas
 gem 'kaminari' # Para paginación
+gem 'overcommit'
