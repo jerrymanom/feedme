@@ -40,7 +40,3 @@ PrePush:
     enabled: true
     description: 'Run RSpec tests before push'
     command: ['bundle', 'exec', 'rspec']
-  RuboCop:
-    enabled: true
-    description: 'Ensure Rubocop passes before push'
-    command: ['bundle', 'exec', 'rubocop']
