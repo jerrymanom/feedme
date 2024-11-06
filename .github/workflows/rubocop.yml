@@ -22,7 +22,7 @@ jobs:
     - name: Run reviewdog
       uses: reviewdog/action-rubocop@v1
       with:
-        rubocop_version: 'latest'
+        rubocop_version: '1.6.8'
         level: 'warning'
         reporter: 'github-check'
         fail_on_error: 'true'
